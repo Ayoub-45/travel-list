@@ -1,12 +1,11 @@
 import React from "react"
-import { initialItems } from "../items"
 import { Item } from "./Item"
-export function PackingList() {
+export function PackingList({items,onDeleteItems,onToggleItems}) {
     return (
         <div className="list">
         <ul>
-         {initialItems.map(item=>
-                 <Item key={item.id} quantity={item.quantity} description={item.description} packed={item.packed}/>
+         {items.map(item=>
+                 <Item key={item.id} id={item.id} quantity={item.quantity} description={item.description} packed={item.packed} onDeleteItems={onDeleteItems} onToggleItems={onToggleItems}/>
                 )}
             </ul>
         </div>
